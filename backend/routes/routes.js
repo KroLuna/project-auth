@@ -16,6 +16,15 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
+// Authenticated Route
+router.get("/secrets", authenticateUser, (req, res) => {
+  res.json({ secret: "This is a super-secret message." });
+});
+
+router.get("/", (req, res) => {
+  res.send(listEndpoints(router));
+});
+
 // Register Route
 router.post("/users", async (req, res) => {
   try {
@@ -59,15 +68,6 @@ router.post("/sessions", async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: "Login failed", error: err.message });
   }
-});
-
-// Authenticated Route
-router.get("/secrets", authenticateUser, (req, res) => {
-  res.json({ secret: "This is a super-secret message." });
-});
-
-router.get("/", (req, res) => {
-  res.send(listEndpoints(router));
 });
 
 export { router as routes };
