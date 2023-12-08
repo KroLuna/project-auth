@@ -42,7 +42,7 @@ export const Login = () => {
   // Text for UI
   const text = {
     heading: "Login Page",
-    intro: "login here...",
+    intro: "Login here...",
     loremIpsum: "Login to see the super secret page!",
   };
 
