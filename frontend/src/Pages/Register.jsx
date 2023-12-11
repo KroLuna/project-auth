@@ -32,7 +32,7 @@ export const Register = () => {
   console.log(email);
   const text = {
     heading: "SignUp Page",
-    intro: "signup here...",
+    intro: "Signup here...",
     loremIpsum: "Sign up to see the super secret message!",
   };
 
